@@ -20,7 +20,7 @@ const SearchIcon = ({ size = 24, color = 'black' }) => {
         <Path d="M21 21l-5.2-5.2" />
         <Circle cx="10" cy="10" r="7" />
       </Svg>
-      <ColoredText style={{...tw`pl-4 text-base `,color:'gray'}}>Search Product</ColoredText>
+      <ColoredText style={{...tw`pl-4 text-base `,color:'#D3D3D3'}}>Search Product</ColoredText>
     </View>
   );
 }
