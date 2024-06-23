@@ -8,7 +8,9 @@ function RootLayout() {
     <>
     <RecoilRoot>
     <Stack>
-      <Stack.Screen name="(home)" options={{headerShown: false}} />
+      <Stack.Screen name="(home)" options={{
+        headerShown: false,
+        statusBarTranslucent:true}} />
     </Stack>
     </RecoilRoot>
     </>

@@ -1,17 +1,21 @@
 import React from 'react'
 import { View, Image} from 'react-native';
+import {Link} from 'expo-router';
 import tw from 'twrnc';
 import ColoredText from '../ColoredText';
 interface ProductInterface{
+    id:string;
     name:string;
     mrp:number;
     rate:number;
     stock:number;
     qtyt:string;
 }
-const ProductListCard : React.FC<ProductInterface> = ({name,mrp,rate,stock,qtyt}) => {
+const ProductListCard : React.FC<ProductInterface> = ({id,name,mrp,rate,stock,qtyt}) => {
   return (
-    <View style={tw`flex flex-row gap-5 h-15 m-1  content-center border-t-2 border-gray-800 rounded bg-gray-800`}> 
+    <Link href={`product_detail/${id}`}
+          style={tw`flex flex-row gap-5 h-15 m-1 content-center border-t-2 border-gray-800 rounded bg-gray-800`}>
+    <View style={tw`flex flex-row gap-5 h-15 m-1 content-center border-t-2 border-gray-800 rounded bg-gray-800`}> 
         <View style={tw`border border-purple-400 rounded-lg w-12 h-12 ml-1 mt-1`}>
         <Image source={require('../../assets/images/adaptive-icon.png')} style={tw` border-2 rounded-lg w-12 h-12`}/>
         </View>
@@ -23,8 +27,8 @@ const ProductListCard : React.FC<ProductInterface> = ({name,mrp,rate,stock,qtyt}
             <ColoredText style={tw` px-1 text-xs font-semibold capitalize text-gray-400`}>{`stock : ${stock} ${qtyt}`}</ColoredText>
           </View>
         </View>
-
     </View>
+    </Link>
   )
 }
 

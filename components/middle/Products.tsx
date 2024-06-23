@@ -6,6 +6,7 @@ import { useRecoilValue } from 'recoil';
 import { products_sel } from '@/state/selectors';
 
 type ProductType = {
+  id:string,
   name : string,
   mrp:number,
   rate:number,
@@ -18,7 +19,9 @@ function Products() {
   return (
     <ScrollView style={tw`mt-2 mb-14`}>
       <View> 
-      {Products.map((product : ProductType)=>{return <ProductListCard 
+      {Products.map((product : ProductType)=>{return <ProductListCard
+        key={product.id}
+        id={product.id}
         name={product.name} 
         mrp={product.mrp} 
         rate={product.rate} 
