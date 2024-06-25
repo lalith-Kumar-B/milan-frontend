@@ -3,7 +3,8 @@ import { ScrollView, View } from 'react-native';
 import tw from 'twrnc';
 import ProductListCard from './ProductListCard';
 import { useRecoilValue } from 'recoil';
-import { products_sel } from '@/state/selectors';
+// import { products_sel } from '@/state/selectors';
+import { productsAtom } from '@/state/atoms';
 
 type ProductType = {
   id:string,
@@ -15,7 +16,7 @@ type ProductType = {
 }
 
 function Products() {
-  const Products = useRecoilValue(products_sel);
+  const Products = useRecoilValue(productsAtom);
   return (
     <ScrollView style={tw`mt-2 mb-14`}>
       <View> 
